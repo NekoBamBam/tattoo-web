@@ -9,10 +9,10 @@ function Layout() {
       <header>
         <Navbar />
       </header>
-      <main className="h-full">
+      <main className="h-full w-full">
         <Outlet />
       </main>
-      <footer className="h-2/3">
+      <footer className="h-full w-full">
         <Footer />
       </footer>
     </div>
