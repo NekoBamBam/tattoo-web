@@ -1,9 +1,8 @@
-import {Route, Routes } from "react-router";
-import Home from "./components/Home";
-import { BrowserRouter } from "react-router";
-import Layaout from "./layaouts/Layaout";
+import "./App.css";
 import React from "react";
-
+import { BrowserRouter, Route, Routes } from "react-router";
+import Home from "./pages/Home";
+import Layout from "./layouts/Layout";
 
 function App() {
   return (
@@ -15,6 +14,7 @@ function App() {
       </Routes>
     </BrowserRouter> 
   );
+
 }
 
 export default App;
