@@ -4,4 +4,11 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
+  theme: {
+    extend: {
+      fontFamily: {
+        imbue: ['"Imbue"', 'serif'],
+      },
+    },
+  },
 })
