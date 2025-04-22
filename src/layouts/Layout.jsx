@@ -2,6 +2,8 @@ import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Outlet } from "react-router";
+import Home from "../pages/Home";
+import Works from "../pages/Works";
 
 function Layout() {
   return (
@@ -10,8 +12,9 @@ function Layout() {
         <Navbar />
       </header>
       <main className="h-full w-full">
-        <Outlet />
+      <Outlet/>
       </main>
+      
       <footer className="h-full w-full">
         <Footer />
       </footer>
