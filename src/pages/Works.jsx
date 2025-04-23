@@ -1,4 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import tattoo1 from "../assets/tattoo1.webp";
 import tattoo2 from "../assets/tattoo2.webp";
 import tattoo3 from "../assets/tattoo3.webp";
@@ -12,92 +15,32 @@ const tattoos = [
 ];
 
 function Works() {
-  /* Conditions for the arrows */
-  const containerRef = useRef(null);
-  const [atStart, setAtStart] = useState(true);
-
-  const handleScroll = () => {
-    const scrollLeft = containerRef.current.scrollLeft;
-    setAtStart(scrollLeft <= 0);
+  /* Configuración de la librería slider */
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
   };
-
-  /* Scroll function */
-  const scroll = (direction) => {
-    const container = containerRef.current;
-    const width = container.offsetWidth;
-    container.scrollBy({
-      left: direction === "next" ? width : -width,
-      behavior: "smooth",
-    });
-  };
-
-  /* Event listener */
-  useEffect(() => {
-    const container = containerRef.current;
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div>
-      {/* Title */}
-      <div className="flex justify-center items-center h-32 bg-[#5E503F] text-5xl text-[#EAE0D5] font-imbue">
+    <div className="bg-[#5E503F] flex justify-center items-center flex-col pb-10">
+      {/* Titulo */}
+      <div className="flex items-center h-32  text-5xl text-[#EAE0D5] font-imbue">
         <h2>Trabajos</h2>
       </div>
-      <div className="scrollbar-none">
-        <ul ref={containerRef} className="overflow-x-scroll sm:scroll-snap-x flex">
-          {tattoos.map(({ img }, index) => (
-            <li
-              key={index}
-              className="flex-shrink-0 w-full snap-start lg:w-1/4 "
-            >
-              <img
-                src={img}
-                alt=""
-                className="w-full h-full object-cover brightness-50"
-              />
-            </li>
-          ))}
-        </ul>
-        {/* Flechas with scroll-snap and states*/}
-        {!atStart && (
-          <button
-            onClick={() => scroll("prev")}
-            className="absolute left-2 top-1/2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="64"
-              height="64"
-              fill="#C6AC8F"
-              className="bi bi-arrow-left-short"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
-              />
-            </svg>
-          </button>
-        )}
-        <button
-          onClick={() => scroll("next")}
-          className="absolute right-2 top-1/2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="64"
-            height="64"
-            fill="#C6AC8F"
-            className="bi bi-arrow-right-short"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
-            />
-          </svg>
-        </button>
+      {/* Utilización de un slider para la reenderización de las imágenes */}
+      <div className="w-full max-w-4xl lg:h-full">
+        <Slider {...settings}>
+          {tattoos.map(({ img }, index) => {
+            return (
+              <div key={index}>
+                <img src={img} alt="Tatuaje ejemplo del trabajo de Nicolás Coria" className="w-full h-[500px] lg:h-[600px] object-cover lg:rounded-lg"/>
+              </div>
+            );
+          })}
+        </Slider>
       </div>
     </div>
   );

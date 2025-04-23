@@ -1,7 +1,7 @@
 import React from "react";
 import nico1 from "../assets/nico1.jpg";
 import fondo2 from "../assets/fondo2.jpg";
-import Works from "./Works"
+import Works from "./Works";
 
 function Home() {
   const scrollToSection = () => {
@@ -11,9 +11,9 @@ function Home() {
 
   return (
     <div className="bg-[#C6AC8F]">
-      <div className=" h-full">
+      <div className="relative min-h-screen ">
         <img
-          className="h-full w-full object-cover opacity-65"
+          className="h-screen w-full object-cover opacity-65"
           src={fondo2}
           alt=""
         />
@@ -68,7 +68,9 @@ function Home() {
           </div>
         </div>
       </div>
-      <Works/>
+      <section>
+        <Works />
+      </section>
     </div>
   );
 }
