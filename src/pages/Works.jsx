@@ -24,8 +24,13 @@ function Works() {
     slidesToScroll: 1,
     arrows: true,
   };
+  const scrollToSection = () => {
+    const section = document.getElementById("");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="bg-[#5E503F] flex justify-center items-center flex-col pb-10">
+    <div onClick={scrollToSection} className="bg-[#5E503F] flex justify-center items-center flex-col pb-10 ">
       {/* Titulo */}
       <div className="flex items-center h-32  text-5xl text-[#EAE0D5] font-imbue">
         <h2>Trabajos</h2>
