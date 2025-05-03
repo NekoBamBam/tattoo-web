@@ -18,9 +18,13 @@ function Home() {
           alt=""
         />
         <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-4xl sm:text-5xl text-white font-imbue  mb-6 drop-shadow-lg">
-            ¿QUIÉN SOY?
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-imbue uppercase tracking-widest text-[#C6AC8F] md:text-[#EAE0D5] drop-shadow-lg text-center  transition hover:text-black hover:tracking-[0.3em]">
+            coria black tattoo
           </h1>
+
+          <h2 className="text-2xl sm:text-5xl text-white font-imbue mt-16 drop-shadow-lg">
+            ¿QUIÉN SOY?
+          </h2>
           <button
             onClick={scrollToSection}
             className="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition duration-300 text-base sm:text-lg mt-16"
@@ -33,7 +37,7 @@ function Home() {
               width="56"
               height="56"
               fill="currentColor"
-              className="bi bi-chevron-compact-down text-white  hover:text-gray-300 transition"
+              className="bi bi-chevron-compact-down text-white  hover:text-gray-400 transition"
               viewBox="0 0 16 16"
             >
               <path
@@ -44,6 +48,7 @@ function Home() {
           </div>
         </div>
       </div>
+
       <div
         id="sobre-mi"
         className="min-h-screen bg-[#C6AC8F] flex items-center justify-center p-8"
@@ -57,10 +62,11 @@ function Home() {
               SOBRE MI
             </h1>
             <p className="text-lg text-gray-600">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe
-              recusandae non neque vitae obcaecati autem nisi excepturi dolor
-              aperiam explicabo at, facere voluptatum alias ipsa consequuntur
-              similique magnam doloribus odit?
+              Hola! Soy Coria Nicolas, un joven y aprendiz tatuador que mi
+              interés comenzó desde muy joven dibujando y viendo revistas y
+              programas de televsión sobre el tattoo. Busco mejorar cada dia
+              para brindar la maxima calidad y atención posible, no dudes en
+              contactar conmigo, te espero!🙌
             </p>
           </div>
           <div className="md:w-1/2 flex justify-center">
@@ -68,6 +74,7 @@ function Home() {
           </div>
         </div>
       </div>
+
       <section>
         <Works />
       </section>

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,6 +15,53 @@ const tattoos = [
   { img: tattoo4 },
 ];
 
+const NextArrow = ({ onClick }) => {
+  return (
+    <motion.div
+      onClick={onClick}
+      whileTap={{ scale: 0.85 }}
+      whileHover={{ scale: 1.1 }}
+      className="absolute -right-14 top-1/2 -translate-y-1/2 bg-[#EAE0D5] p-3 rounded-full cursor-pointer z-10 shadow-lg"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5 text-[#5E503F]"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </motion.div>
+  );
+};
+
+const PrevArrow = ({ onClick }) => {
+  return (
+    <motion.div
+      onClick={onClick}
+      whileTap={{ scale: 0.85 }}
+      whileHover={{ scale: 1.1 }}
+      className="absolute -left-14 top-1/2 -translate-y-1/2 bg-[#EAE0D5] p-3 rounded-full cursor-pointer z-10 shadow-lg"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5 text-[#5E503F]"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15 19l-7-7 7-7"
+        />
+      </svg>
+    </motion.div>
+  );
+};
 function Works() {
   /* Configuración de la librería slider */
   const settings = {
@@ -23,6 +71,8 @@ function Works() {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
   const scrollToSection = () => {
     const section = document.getElementById(id);
@@ -30,21 +80,29 @@ function Works() {
   };
 
   return (
-    <div onClick={scrollToSection} className="bg-[#5E503F] flex justify-center items-center flex-col pb-10 ">
+    <div
+      onClick={scrollToSection}
+      className="bg-[#5E503F] flex justify-center items-center flex-col pb-10 "
+    >
       {/* Titulo */}
-      <div id="trabajos" className="flex items-center h-32  text-5xl text-[#EAE0D5] font-imbue">
-        <h2 >Trabajos</h2>
+      <div
+        id="trabajos"
+        className="flex items-center h-32  text-5xl text-[#EAE0D5] font-imbue"
+      >
+        <h2>Trabajos</h2>
       </div>
       {/* Utilización de un slider para la reenderización de las imágenes */}
-      <div className="w-full max-w-4xl lg:h-full">
+      <div className="relative w-full max-w-4xl lg:h-full">
         <Slider {...settings}>
-          {tattoos.map(({ img }, index) => {
-            return (
-              <div key={index}>
-                <img src={img} alt="Tatuaje ejemplo del trabajo de Nicolás Coria" className="w-full h-[500px] lg:h-[600px] object-cover lg:rounded-lg"/>
-              </div>
-            );
-          })}
+          {tattoos.map(({ img }, index) => (
+            <div key={index}>
+              <img
+                src={img}
+                alt="Tatuaje ejemplo"
+                className="w-full h-[500px] lg:h-[600px] object-cover lg:rounded-lg"
+              />
+            </div>
+          ))}
         </Slider>
       </div>
     </div>
