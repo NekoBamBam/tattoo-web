@@ -25,15 +25,15 @@ function Works() {
     arrows: true,
   };
   const scrollToSection = () => {
-    const section = document.getElementById("");
+    const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div onClick={scrollToSection} className="bg-[#5E503F] flex justify-center items-center flex-col pb-10 ">
       {/* Titulo */}
-      <div className="flex items-center h-32  text-5xl text-[#EAE0D5] font-imbue">
-        <h2>Trabajos</h2>
+      <div id="trabajos" className="flex items-center h-32  text-5xl text-[#EAE0D5] font-imbue">
+        <h2 >Trabajos</h2>
       </div>
       {/* Utilización de un slider para la reenderización de las imágenes */}
       <div className="w-full max-w-4xl lg:h-full">

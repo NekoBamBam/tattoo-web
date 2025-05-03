@@ -4,10 +4,12 @@ import { Menu, X } from "lucide-react"; // íconos del menú
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const scrollToSection = () => {
-    const section = document.getElementById("sobre-mi");
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false); // cerrar menú en mobile
   };
+  
 
   return (
     <nav className="bg-[#EAE0D5] border-b border-gray-200 px-6 py-4 relative z-50">
@@ -23,14 +25,14 @@ export default function Navbar() {
           className="hidden md:flex space-x-6 justify-center w-full"
         >
           <a
-            href="#inicio"
+            href="#sobre-mi"
             className="text-black hover:text-red-500 font-serif"
           >
             SOBRE MI
           </a>
           <div onClick={scrollToSection}>
             <a
-              href="#servicios"
+              href="#trabajos"
               className="text-black hover:text-red-500 font-serif"
             >
               TRABAJOS
@@ -58,14 +60,14 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden absolute top-full left-0 w-full bg-[#EAE0D5] shadow-md flex flex-col items-center space-y-4 py-4">
           <a
-            href="#inicio"
+            href="#sobre-mi"
             className="text-black"
             onClick={() => setOpen(false)}
           >
             SOBRE MI
           </a>
           <a
-            href="#servicios"
+            href="#trabajos"
             className="text-black"
             onClick={() => setOpen(false)}
           >
