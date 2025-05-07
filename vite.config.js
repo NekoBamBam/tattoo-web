@@ -4,6 +4,7 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
+  base: "https://NekoBamBam.github.io/tattoo-web/",
   theme: {
     extend: {
       fontFamily: {
