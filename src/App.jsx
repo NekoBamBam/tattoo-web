@@ -1,18 +1,18 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import Layout from "./layouts/Layout";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-      <Route element={<Layout/>}>
+      <Route path="/" element={<Layout/>}>
           <Route index element={<Home />} />
       </Route>
       </Routes>
-    </BrowserRouter> 
+    </HashRouter> 
   );
 
 }
