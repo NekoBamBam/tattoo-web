@@ -89,7 +89,7 @@ function Carousel() {
         pauseOnMouseEnter: false,
       }}
       id="contacto"
-      className="flex items-center w-1/2 lg:w-1/4"
+      className=" flex items-center w-1/2  lg:w-1/4"
     >
       {socialLinks.map((social, index) => {
   return (
@@ -99,7 +99,7 @@ function Carousel() {
           href={social.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center"
+          className="flex items-center justify-center "
         >
           {social.svg}
         </a>

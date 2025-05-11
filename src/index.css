@@ -4,3 +4,12 @@
 @theme {
   --font-imbue: Imbue, "serif";
 }
+.logo-move {
+  margin-left: -600px;
+}
+
+@media (max-width: 768px) {
+  .logo-move {
+    margin-left: 0;
+  }
+}

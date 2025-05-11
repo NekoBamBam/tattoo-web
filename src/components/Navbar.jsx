@@ -14,11 +14,11 @@ export default function Navbar() {
   return (
     <nav className="bg-[#EAE0D5] border-b border-gray-200 px-6 py-4 relative z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between md:justify-center">
-        <div className="h-16 w-16 transition duration-300 hover:scale-110">
-          <img src={logo} alt="Logo" />
+        <div className="h-16 w-16 ">
+          <img src={logo} alt="Logo" className="logo-move "/>
         </div>
 
-        <div className="hidden md:flex space-x-6 justify-center w-full">
+        <div className="hidden md:flex space-x-8 absolute justify-center w-full">
           <button
             onClick={() => scrollToSection("sobre-mi")}
             className="text-black hover:text-red-500 font-serif"
