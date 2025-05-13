@@ -80,8 +80,8 @@ function Carousel() {
     <Swiper
       modules={[Autoplay, A11y]}
       slidesPerView={3}
-      centeredSlides={true}
-      spaceBetween={30}
+      centeredSlides
+      spaceBetween={137}
       loop={true}
       autoplay={{
         delay: 2500,
