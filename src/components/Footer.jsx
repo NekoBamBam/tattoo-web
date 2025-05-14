@@ -16,7 +16,7 @@ function Footer() {
   return (
     <div className="bg-[#5E503F]">
       {/* Carousel social links */}
-      <section className="bg-[#EAE0D5] h-32 w-full flex items-center justify-center">
+      <section className="bg-[#EAE0D5] min-h-32 w-full flex items-center justify-center">
         <Carousel />
       </section>
       <section className="h-auto flex flex-col items-center justify-center gap-8 py-12">

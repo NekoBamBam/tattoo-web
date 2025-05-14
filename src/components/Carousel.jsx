@@ -80,8 +80,7 @@ function Carousel() {
     <Swiper
       modules={[Autoplay, A11y]}
       slidesPerView={3}
-      centeredSlides
-      spaceBetween={137}
+      spaceBetween={33}
       loop={true}
       autoplay={{
         delay: 2500,
@@ -89,25 +88,23 @@ function Carousel() {
         pauseOnMouseEnter: false,
       }}
       id="contacto"
-      className=" flex items-center w-1/2  lg:w-1/4"
+      className="flex items-center w-1/2 lg:w-1/4 lg:h-full "
     >
       {socialLinks.map((social, index) => {
-  return (
-    <SwiperSlide key={index}>
-      <div className="tooltip tooltip-left" data-tip={social.name}>
-        <a
-          href={social.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center "
-        >
-          {social.svg}
-        </a>
-      </div>
-    </SwiperSlide>
-  );
-})}
-
+        return (
+          <SwiperSlide key={index}>
+            <a
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center tooltip tooltip-left"
+              data-tip={social.name}
+            >
+              {social.svg}
+            </a>
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 }
