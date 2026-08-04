@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Slider from "react-slick";
+import SliderPkg from "react-slick";
+const Slider = SliderPkg.default || SliderPkg;
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import tattoo1 from "../assets/tattoo1.webp";
