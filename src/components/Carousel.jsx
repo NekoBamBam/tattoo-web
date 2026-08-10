@@ -81,12 +81,12 @@ function Carousel() {
       modules={[Autoplay, A11y]}
       slidesPerView={3}
       centeredSlides={true}
-      spaceBetween={30}
+      spaceBetween={40}
       loop={true}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,
-        pauseOnMouseEnter: false,
+        pauseOnMouseEnter: true,
       }}
       id="contacto"
       className=" flex items-center w-1/2  lg:w-1/4"
